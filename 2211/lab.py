@@ -9,17 +9,29 @@ def dzielniki(n):
     return dziel
 
 def podzielniki(n):
-    dziel = dzielniki(n+1)
+    dziel = dzielniki(n)
+    pierwsze = []
+    if czy_pierwsza(n):
+        pierwsze.append(n)
+    for i in dziel:
+        if czy_pierwsza(i):
+            pierwsze.append(i)
+    return pierwsze
 
 def czy_pierwsza(n):
-    # if n < 2:
-    #     return False
+    if n == 1:
+        return False
+    d = [1]
     for i in range(2, n+1):
-        if n % i == 0:
-           print(n, i, n % i) 
+        if not n % i: 
+            d.append(i)
+    return len(d) == 2
 
-print(czy_pierwsza(1))
-print(czy_pierwsza(2))
-print(czy_pierwsza(3))
-print(czy_pierwsza(4))
-print(czy_pierwsza(5))
+def fibo(n, memo = {}):
+    if (n < 2):
+        return n
+    if n not in memo:
+        memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo)
+    return memo[n]
+
+print(fibo(100))
