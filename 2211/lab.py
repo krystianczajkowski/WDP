@@ -34,4 +34,11 @@ def fibo(n, memo = {}):
         memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo)
     return memo[n]
 
-print(fibo(100))
+def fibo_mniejsza_od_n(n):
+    i = 0
+    fibos = []
+    while fibo(i) < n:
+        i += 1
+    return fibo(i - 1)
+
+print(fibo_mniejsza_od_n(989))
