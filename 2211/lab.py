@@ -41,4 +41,20 @@ def fibo_mniejsza_od_n(n):
         i += 1
     return fibo(i - 1)
 
+def najwiekszy_wspolny_dzielnik(a, b):
+    while b != 0:
+        c = a % b
+        a = b
+        b = c
+    return a
+
+
+def podpunkt_a(n):
+    wzgl_pierwsze = []
+    for i in range(1, n):
+        if najwiekszy_wspolny_dzielnik(i, n) == 1:
+            wzgl_pierwsze.append(i)
+    return wzgl_pierwsze
+print(podpunkt_a(6))
+
 print(fibo_mniejsza_od_n(989))
