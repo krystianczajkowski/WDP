@@ -1,13 +1,15 @@
-def doskonale(n):
+
+
+def liczba_doskonala(n):
    return sum(dzielniki(n)) == n
 
 def dzielniki(n):
     dziel = []
-    for i in range(1, n):
+    for i in range(1, (n//2)+1):
         if not n % i:
             dziel.append(i)
     return dziel
-
+print(liczba_doskonala(8589869056))
 def podzielniki(n):
     dziel = dzielniki(n)
     pierwsze = []
@@ -25,7 +27,9 @@ def czy_pierwsza(n):
     for i in range(2, n+1):
         if not n % i: 
             d.append(i)
-    return len(d) == 2
+            if len(d) >= 2:
+                return False
+    return True
 
 def fibo(n, memo = {}):
     if (n < 2):
@@ -36,7 +40,6 @@ def fibo(n, memo = {}):
 
 def fibo_mniejsza_od_n(n):
     i = 0
-    fibos = []
     while fibo(i) < n:
         i += 1
     return fibo(i - 1)
@@ -55,6 +58,6 @@ def podpunkt_a(n):
         if najwiekszy_wspolny_dzielnik(i, n) == 1:
             wzgl_pierwsze.append(i)
     return wzgl_pierwsze
-print(podpunkt_a(6))
+print(podpunkt_a(10))
 
 print(fibo_mniejsza_od_n(989))
