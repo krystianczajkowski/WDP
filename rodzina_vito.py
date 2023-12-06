@@ -7,3 +7,4 @@ def dystans_miedzy_punktami(pkt: list):
             for f in pkt:
                 if e - f != 0:
                     odleglosci.append(abs(e-f))
+    return round(sum(odleglosci)/len(oldeglosci))
