@@ -17,5 +17,7 @@ def dzielniki(n: int, is_inclusive=False) -> list:
 def main():
     print(dzielniki(6, True))
 
+
 if __name__ == "__main__":
     main()
+    

@@ -1,5 +1,4 @@
 
-
 def liczby_wzglednie_pierwsze(a, b):
     if b < a:
         tmp = b 
@@ -11,5 +10,3 @@ def liczby_wzglednie_pierwsze(a, b):
         a = b
         b = c
     return a == 1
-
-print(liczby_wzglednie_pierwsze(33, 12))
